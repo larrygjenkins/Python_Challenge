@@ -31,19 +31,27 @@ The repository contains two folders: PyBank for the financial analysis and PyPol
 Within each folder is a main.py file (which contains the Python script), a MainWorkingCopy.ipynb (which contains the Jupyter Notebook used to create each Python script), a Resources folder with the original dataset in csv format, and an Analysis folder containing the text file output of each analysis.
 
 ## Challenges
-One of the stocks represented had "0" listed for all pricing data. This meant that calculations performed by the script could result in an Overflow Error because a formula would have included dividing by 0. 
+For the financial analysis, the profit/loss data was retrieved from a csv file, which required the values be converted from strings before any calculations could occur. To accomplish this, values were first added to an empty array and then converted to integers.
 
-To account for this, the script included a nested If statement to validate if the yearly open price was 0. If so, the percent change was automatically assigned a value of 0.
+**For each row in the csv file (after the header), months and values were added to the appropriate array**
 
-**Nested If Statement Validating Whether Year Open Price is 0**
+    for row in csvreader:
+        months.append(row[0])
+        values.append(row[1])
 
-        If yrOpenPrice = 0 Then
-            percentChange = 0
-                    
-        Else
-            percentChange = Round((((yrClosePrice - yrOpenPrice) / yrOpenPrice) * 100), 2)
-                    
-        End If
+**Items in the value array were then converted to integers**
+
+    for i in range(0, len(values)):
+        values[i] = int(values[i])
+
+Another loop was used to calculate the change in value each month, and those values were then added to an empty array (monthly_change).
+
+**Finds the change from one integer to the next in the values array**
+
+    for i in range(1, len(values)):
+        monthly_change.append(values[i]-values[i-1])
+
+For the election analysis, 
 
 This solution served this particular data set, but it would have limitations if the opening price was 0 but the closing price was not. That scenario would require a decision on how to present a percentage change when the starting value is 0. (For example, would a starting price of 0 and an ending price of 1 be represented as a 100% change?)  
 
