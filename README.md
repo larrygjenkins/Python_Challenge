@@ -1,5 +1,5 @@
 # Python_Challenge
-![GitHub contributors](https://img.shields.io/github/contributors/larrygjenkins/larrygjenkins.github.io)
+![GitHub Contributors](https://img.shields.io/github/contributors/larrygjenkins/larrygjenkins.github.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Description
 The goal of this project was to use Python to work on two distinct scenarios: 
@@ -43,8 +43,8 @@ To account for this, the script included a nested If statement to validate if th
 This solution served this particular data set, but it would have limitations if the opening price was 0 but the closing price was not. That scenario would require a decision on how to present a percentage change when the starting value is 0. (For example, would a starting price of 0 and an ending price of 1 be represented as a 100% change?)  
 
 ## Technologies Used
-* Excel
-* VBA
+* Python
+* Jupyter Notebook
 
 ## Questions?
 Contact me at the following locations:

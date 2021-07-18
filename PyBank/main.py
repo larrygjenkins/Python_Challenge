@@ -29,7 +29,7 @@ total_months = len(months)
 total_value = sum(values)
 
 # Loops through each integer in the values array and finds the change from one integer to the next in the array, 
-# then adds teh change to a new array called "monthly_change"
+# then adds the change to a new array called "monthly_change"
 for i in range(1, len(values)):
     monthly_change.append(values[i]-values[i-1])
 
