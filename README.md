@@ -4,14 +4,14 @@
 ## Description
 The goal of this project was to use Python to work on two distinct scenarios: 
 1. Analyzing financial records for a company.
-2. Determing the winner of a local election and the breakdown of votes by candidate. 
+2. Determining the winner of a local election and the breakdown of votes received by each candidate. 
 
 ## Requirements
 The financial analysis required a script to calculate and display the following information: 
 
 * The total number of months included in the dataset.
-* The net total amount of "profit/loss" over the entire time period.
-* The changes in profit/loss over the entire time period and the average of those changes.
+* The net total amount of "profit/loss" over the time period represented in the data.
+* The changes in profit/loss over the time period and the average of those changes.
 * The greatest increase in profit (date and amount) over the time period. 
 * The greatest decrease in losses (date and amount) over the time period.
 * In addition to displaying these results, they were also exported to a text file.
@@ -28,7 +28,7 @@ The election analysis required a script to calculate and display the following i
 ## Repository Organization
 The repository contains two folders: PyBank for the financial analysis and PyPoll for the election analysis. 
 
-Within each folder is a main.py file (which contains the Python script), a MainWorkingCopy.ipynb (which contains the Jupyter Notebook used to create each Python script), a Resources folder with the original dataset in csv format, and an Analysis folder containing the text file output of each analysis.
+Within each folder is a main.py file (which contains the Python script), a MainWorkingCopy.ipynb (which contains the Jupyter Notebook used to create each Python script), a Resources folder with the original dataset in csv format, and an Analysis folder containing the text file output for each analysis.
 
 ## Challenges
 ### Financial Analysis
@@ -55,7 +55,7 @@ Another loop was used to calculate the change in value each month, and those val
 ### Election Analysis
 For the election analysis, an initial requirement was to determine the number of votes cast in the election. After creating a variable for num_votes and settings its value to 0, the script used a loop to increment the value of the num_votes variable for each row after the header row. 
 
-**Loop used to calculate totl number of votes cast**
+**Loop used to calculate total number of votes cast**
 
     for row in csvreader:
         num_votes += 1
@@ -65,7 +65,7 @@ An if statement within this loop was used to create a list of candidates who rec
 **When a unique candidate name is found, it is added to the "candidates" array**
 
         if row[2] not in candidates:
-                candidates.append(row[2])
+            candidates.append(row[2])
 
 Additionally, a secondary if statement was used to calculate the number of votes each candidate received. 
 
