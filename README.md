@@ -31,6 +31,7 @@ The repository contains two folders: PyBank for the financial analysis and PyPol
 Within each folder is a main.py file (which contains the Python script), a MainWorkingCopy.ipynb (which contains the Jupyter Notebook used to create each Python script), a Resources folder with the original dataset in csv format, and an Analysis folder containing the text file output of each analysis.
 
 ## Challenges
+### Financial Analysis
 For the financial analysis, the profit/loss data was retrieved from a csv file, which required the values be converted from strings before any calculations could occur. To accomplish this, values were first added to an empty array and then converted to integers.
 
 **For each row in the csv file (after the header), months and values were added to the appropriate array**
@@ -51,9 +52,38 @@ Another loop was used to calculate the change in value each month, and those val
     for i in range(1, len(values)):
         monthly_change.append(values[i]-values[i-1])
 
-For the election analysis, 
+### Election Analysis
+For the election analysis, an initial requirement was to determine the number of votes cast in the election. After creating a variable for num_votes and settings its value to 0, the script used a loop to increment the value of the num_votes variable for each row after the header row. 
 
-This solution served this particular data set, but it would have limitations if the opening price was 0 but the closing price was not. That scenario would require a decision on how to present a percentage change when the starting value is 0. (For example, would a starting price of 0 and an ending price of 1 be represented as a 100% change?)  
+**Loop used to calculate totl number of votes cast**
+
+    for row in csvreader:
+        num_votes += 1
+
+An if statement within this loop was used to create a list of candidates who received votes. 
+
+**When a unique candidate name is found, it is added to the "candidates" array**
+
+        if row[2] not in candidates:
+                candidates.append(row[2])
+
+Additionally, a secondary if statement was used to calculate the number of votes each candidate received. 
+
+**Variables assigned to each candidate increase by 1 each time the candidate's name appears**
+
+        if row[2] == candidates[0]:
+            candidate0_votes += 1
+            
+        elif row[2] == candidates[1]:
+            candidate1_votes += 1
+            
+        elif row[2] == candidates[2]:
+            candidate2_votes += 1
+        
+        elif row[2] == candidates[3]:
+            candidate3_votes += 1
+
+In the code example above, the candidate's vote variable corresponds to their index within the "candidates" array. This index was used to assign vote totals, calculate the percentage of votes received for each candidate, and determine the election winner based on popular votes received.   
 
 ## Technologies Used
 * Python
