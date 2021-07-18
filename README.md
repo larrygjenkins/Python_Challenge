@@ -2,16 +2,28 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/larrygjenkins/larrygjenkins.github.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Description
-The goal of this project was to create VBA scripts to analyze stock market data.
+The goal of this project was to use Python to work on two distinct scenarios: 
+1. Analyzing financial records for a company.
+2. Determing the winner of a local election and the breakdown of votes by candidate. 
 
 ## Requirements
-For each sheet in the Excel workbook, create a summary table that includes:
+The financial analysis required a script to calculate and display the following information: 
 
-* The ticker symbol for each represented stock.
-* The change from a stock's opening price for the year to its closing price for the year.
-* The percent change for a stock's opening price for the year to its closing price for the year.
-* The total stock volume for a given ticker symbol. 
-* Conditional formatting for the Yearly Change column that highlighted positive changes in green and negative changes in red.
+* The total number of months included in the dataset.
+* The net total amount of "profit/loss" over the entire time period.
+* The changes in profit/loss over the entire time period and the average of those changes.
+* The greatest increase in profit (date and amount) over the time period. 
+* The greatest decrease in losses (date and amount) over the time period.
+* In addition to displaying these results, they were also exported to a text file.
+
+The election analysis required a script to calculate and display the following information: 
+
+* The total number of votes cast.
+* A complete list of all candidates who received votes.
+* The percentage of votes received by each candidate.
+* The total number of votes received by each candidate. 
+* The winner of the election based on popular vote.
+* In addition to displaying these results, they were also exported to a text file.
 
 ## Challenges
 One of the stocks represented had "0" listed for all pricing data. This meant that calculations performed by the script could result in an Overflow Error because a formula would have included dividing by 0. 
