@@ -25,6 +25,11 @@ The election analysis required a script to calculate and display the following i
 * The winner of the election based on popular vote.
 * In addition to displaying these results, they were also exported to a text file.
 
+## Repository Organization
+The repository contains two folders: PyBank for the financial analysis and PyPoll for the election analysis. 
+
+Within each folder is a main.py file (which contains the Python script), a MainWorkingCopy.ipynb (which contains the Jupyter Notebook used to create each Python script), a Resources folder with the original dataset in csv format, and an Analysis folder containing the text file output of each analysis.
+
 ## Challenges
 One of the stocks represented had "0" listed for all pricing data. This meant that calculations performed by the script could result in an Overflow Error because a formula would have included dividing by 0. 
 
